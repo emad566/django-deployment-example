@@ -1,0 +1,20 @@
+{% extends "basic_app/base.html" %}
+{% block title %}Index{% endblock %}
+
+{% block nav %}
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <a class="navbar-brand" href="#">Level two</a>
+    <ul class="nav navbar-nav">
+            <li class="active"><a class="navbar-brand" href="{% url "basic_app:index" %}">index Page</a></li>
+            <li><a class="navbar-link" href="{% url "basic_app:relative" %}">relative Page</a></li>
+            <li><a class="navbar-link" href="{% url "basic_app:other" %}">other Page</a></li>
+            <li><a class="navbar-link" href="{% url "admin:index" %}">admin Page</a></li>
+    </ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+<h1>This is the index page</h1>
+<h2>{{ title | cut:'Hello' }}</h2>
+<h2>{{ number | add:50 }}</h2>
+{% endblock %}
